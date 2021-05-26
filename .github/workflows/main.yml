@@ -14,4 +14,4 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build Anki
-        run: docker run --rm -ti --platform linux/arm64 fedora:34 bash build.sh
+        run: docker run --platform linux/arm64 fedora:34 bash build.sh
