@@ -12,9 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
-      - name: Setup qemu binfmt support
-        run: sudo apt-get install qemu binfmt-support qemu-user-static
 
       - name: Build Anki
-        run: docker run --platform linux/arm64 -v ${PWD}:/anki-arm64 fedora:34 bash /anki-arm64/build.sh
+        run: sudo apt-get -y install qemu binfmt-support qemu-user-static && docker run --platform linux/arm64 -v ${PWD}:/anki-arm64 fedora:34 bash /anki-arm64/build.sh
