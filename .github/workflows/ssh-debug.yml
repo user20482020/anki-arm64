@@ -6,5 +6,8 @@ jobs:
     steps:    
     - uses: actions/checkout@v2
     
+    - name: Setup qemu binfmt
+      run: sudo apt-get -y install qemu binfmt-support qemu-user-static
+    
     - name: Setup upterm session
       uses: lhotari/action-upterm@v1
