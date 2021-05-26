@@ -13,8 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: Setup Docker Buildx
-        uses: docker/setup-buildx-action@v1
+      - name: Setup qemu binfmt support
+        run: apt-get install qemu binfmt-support qemu-user-static
 
       - name: Build Anki
         run: docker run --platform linux/arm64 fedora:34 bash build.sh
