@@ -12,7 +12,7 @@ tar -xvf anki.tar.gz
 cd anki-"${ANKI_VER}" || exit
 
 ##Use pyqt5 from distro
-dnf -y install python3-pyqt5
+dnf -y install python3-qt5
 cat "build --action_env=PYTHON_SITE_PACKAGES=/usr/lib64/python3.9/site-packages" >> user.bazelrc
 
 ##Build
