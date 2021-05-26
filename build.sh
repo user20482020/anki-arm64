@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 export BAZELISK_VER=1.9.0
 export ANKI_VER=2.1.44
 
