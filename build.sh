@@ -9,7 +9,7 @@ chmod +x bazel && sudo mv bazel /usr/local/bin/
 ##Get Anki Source
 curl -L --output anki.tar.gz https://github.com/ankitects/anki/archive/refs/tags/${ANKI_VER}.tar.gz
 tar -xvf anki.tar.gz
-cd anki-${ANKI_VER}
+cd anki-"${ANKI_VER}" || exit
 
 ##Use pyqt5 from distro
 dnf -y install python3-pyqt5
