@@ -1,0 +1,17 @@
+name: Anki arm64 builder
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build Anki
+        run: docker run --rm -ti --platform linux/arm64 fedora:34 bash build.sh
