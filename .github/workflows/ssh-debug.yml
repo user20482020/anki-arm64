@@ -2,12 +2,12 @@ name: CI
 on: [workflow_dispatch]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-10.15
     steps:    
     - uses: actions/checkout@v2
     
-    - name: Setup qemu binfmt
-      run: sudo apt-get -y install qemu binfmt-support qemu-user-static
+    - name: Run vagrant up
+      run: vagrant up
     
     - name: Setup upterm session
       uses: lhotari/action-upterm@v1
