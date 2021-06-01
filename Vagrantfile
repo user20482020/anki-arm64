@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder ".", "/vagrant", disabled: true
     
     # enable nested virtualization
-    config.vm.provider "virtualbox" do |vb|
-        vb.customize ['modifyvm', :id, '--nested-hw-virt', 'on']
-    end
+    #config.vm.provider "virtualbox" do |vb|
+    #    vb.customize ['modifyvm', :id, '--nested-hw-virt', 'on']
+    #end
 end
