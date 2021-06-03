@@ -11,4 +11,12 @@ Vagrant.configure("2") do |config|
 	    vb.cpus = 2
         vb.customize ['modifyvm', :id, '--nested-hw-virt', 'on']
     end
+	
+    config.vm.provision "shell", inline: <<-SHELL
+	## Setup necessary tools
+	apt update
+	apt install -y git debos bmap-tools f2fs-tools
+	apt-get install -y --no-install-recommends qemu-system libvirt-clients libvirt-daemon-system
+	sudo adduser $(whoami) libvirt
+    SHELL
 end
