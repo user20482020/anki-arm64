@@ -17,6 +17,7 @@ Vagrant.configure("2") do |config|
 	apt update
 	apt install -y git debos bmap-tools f2fs-tools
 	apt-get install -y --no-install-recommends qemu-system libvirt-clients libvirt-daemon-system
-	sudo adduser $(whoami) libvirt
+	sudo adduser vagrant libvirt
+	sudo adduser vagrant kvm
     SHELL
 end
