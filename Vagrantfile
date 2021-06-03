@@ -5,8 +5,10 @@ Vagrant.configure("2") do |config|
     # Prevent SharedFoldersEnableSymlinksCreate errors
     config.vm.synced_folder ".", "/vagrant", disabled: true
     
-    # enable nested virtualization
-    #config.vm.provider "virtualbox" do |vb|
-    #    vb.customize ['modifyvm', :id, '--nested-hw-virt', 'on']
-    #end
+    # Allocate more resources
+    config.vm.provider "virtualbox" do |vb|
+        vb.memory = "3072"
+	    vb.cpus = 2
+        vb.customize ['modifyvm', :id, '--nested-hw-virt', 'on']
+    end
 end
