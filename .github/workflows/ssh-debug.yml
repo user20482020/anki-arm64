@@ -7,8 +7,21 @@ jobs:
     steps:    
     - uses: actions/checkout@v2
     
-    - name: Run vagrant up
-      run: vagrant up
+    - name: Maximize build space
+      uses: easimon/maximize-build-space@master
+      with:
+        root-reserve-mb: 256
+        swap-size-mb: 1
+        remove-dotnet: 'true'
+        remove-android: 'true'
+        remove-haskell: 'true'
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build
+      run: |
+        echo "Free space:"
+        df -h
     
     - name: Setup upterm session
       uses: lhotari/action-upterm@v1
